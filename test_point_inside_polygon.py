@@ -36,3 +36,10 @@ class PointInsidePolygonTestCase(unittest.TestCase):
         polygon = Polygon([A, B, C, D, E, F, G, H, I, J])
         test_point = [5, 5]
         assert_true(polygon.belongs_to_polygon(test_point))
+
+    def test_should_retrieve_false_to_a_point_outside_a_polygon_that_has_6_sides(self):
+        A = [2, 1]; B = [2, 5]; C = [4, 5]
+        D = [4, 8]; E = [6, 8]; F = [6, 1]
+        polygon = Polygon([A, B, C, D, E, F])
+        test_point = [2, 8]
+        assert_false(polygon.belongs_to_polygon(test_point))

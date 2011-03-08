@@ -4,7 +4,6 @@ class Polygon(object):
 
     def get_number_of_intersected_sides(self, test_point):
         crossed_by_left = 0; crossed_by_right = 0
-        print self.coordinates
         for i in range(1, len(self.coordinates)):
             if test_point[1] in range(self.coordinates[i-1][1], self.coordinates[i][1]+1) or test_point[1] in range(self.coordinates[i][1], self.coordinates[i-1][1]+1):
                 if test_point[0] > self.coordinates[i-1][0] and test_point[0] > self.coordinates[i][0]:
