@@ -19,3 +19,7 @@ class Polygon(object):
                 else:
                     crossed_by_right += 1
         return {"left" : crossed_by_left, "right" : crossed_by_right}
+
+    def belongs_to_polygon(self, test_point):
+        crossed = self.get_number_of_intersected_sides(test_point)
+        return crossed["left"] % 2 != 0 and crossed["right"] % 2 != 0
